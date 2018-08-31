@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+  <nav>
+    <div class="nav-wrapper blue-grey darken-1">
+      <a href="<%= lunches_path %>" class="brand-logo center">Shuffle Lunch For FreakOut</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <%= yield %>
   </body>
 </html>

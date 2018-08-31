@@ -1,0 +1,10 @@
+<div class="container">
+  <%= button_to 'shuffle', {:controller => 'lunches', action: 'upload', path: @path } %>
+
+<% @lunch_groups.each do |k, v| %>
+  <div>
+    <h5><%= "Group #{k}" %></h5>
+    <p><%= v.join(" ") %></p>
+  </div>
+<% end %>
+</div>
