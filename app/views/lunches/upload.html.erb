@@ -1,10 +1,23 @@
-<div class="container">
-  <%= button_to 'shuffle', {:controller => 'lunches', action: 'upload', path: @path, group_size: @group_size } %>
+<div class="container" style="margin-top: 10px;">
+  <%= button_to 'shuffle', {:controller => 'lunches', action: 'upload', path: @path, group_size: @group_size}, {class: 'btn btn-primary'} %>
 
-<% @groups.each do |k, v| %>
-  <div>
-    <h5><%= "Group #{k}" %></h5>
-    <p><%= v.join(" ") %></p>
+  <div style="margin-top: 10px; border: #666666">
+    <table class="striped">
+      <thead>
+      <tr>
+        <th>Group Name</th>
+        <th>Group Members</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @groups.each do |k, v| %>
+        <tr>
+          <td><%= "Group_#{k+1}"  %></td>
+          <td><%= v.join(" ") %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div>
-<% end %>
 </div>
