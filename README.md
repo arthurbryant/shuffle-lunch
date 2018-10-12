@@ -1,10 +1,13 @@
 # shuffle-lunch
 Generate groups for shuffle lunch. The algorithm is trying to make group with people from different division as much as possible.
  
+# Requirement
+ - ruby 2.3.3
+ - Rails 5.2
 # Run
 ```ruby
-git clone git@github.com:arthurbryant/shuffle-lunch.git`
-./bin/rails db:migrate`
+git clone git@github.com:arthurbryant/shuffle-lunch.git
+./bin/rails db:migrate
 ./bin/rails s
 ```
 
