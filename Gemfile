@@ -66,3 +66,5 @@ gem 'materialize-sass'
 gem 'material_icons'
 
 gem 'rubocop', '~> 0.59.2', require: false
+
+gem 'awesome_print'
