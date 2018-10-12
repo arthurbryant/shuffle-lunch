@@ -1,7 +1,7 @@
 <div class="container">
-  <%= button_to 'shuffle', {:controller => 'lunches', action: 'upload', path: @path } %>
+  <%= button_to 'shuffle', {:controller => 'lunches', action: 'upload', path: @path, group_size: @group_size } %>
 
-<% @lunch_groups.each do |k, v| %>
+<% @groups.each do |k, v| %>
   <div>
     <h5><%= "Group #{k}" %></h5>
     <p><%= v.join(" ") %></p>

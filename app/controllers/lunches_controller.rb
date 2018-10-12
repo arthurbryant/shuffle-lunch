@@ -1,5 +1,3 @@
-require 'shuffle'
-
 class LunchesController < ApplicationController
   before_action :set_lunch, only: [:show, :edit, :update, :destroy]
 
@@ -10,8 +8,9 @@ class LunchesController < ApplicationController
   end
 
   def upload
-    file = params[:file]
-    @path = params[:path]
+    file = lunch_params[:file]
+    @path = lunch_params[:path]
+    @group_size = lunch_params[:group_size]
 
     if file.present?
       @path = Rails.root.join('tmp', file.original_filename)
@@ -20,6 +19,12 @@ class LunchesController < ApplicationController
       end
     end
 
-    @lunch_groups = Shuffle::generate(@path)
+    # replace this company.yml with your own yaml file
+    config_path = Rails.root.join('config', 'shuffle', 'company.yml')
+    @groups = ShuffleService.call(file_path: @path, group_size: @group_size, config_path: config_path)
+  end
+
+  def lunch_params
+    params.permit(:file, :group_size, :path)
   end
 end
